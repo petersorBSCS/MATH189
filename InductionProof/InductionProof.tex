@@ -1,10 +1,12 @@
 %% Preamble for this document
 % Declare the document class with 12pt font
-\documentclass[12pt]{article}
+\documentclass[11pt]{article}
 % Include the math package
 \usepackage{amsmath}
 % Use the geometry package to change the margins to 1"
 \usepackage[margin=1in]{geometry}
+% Include the graphicx package for inserting diagrams of the problem
+\usepackage{graphicx}
 
 % Here's the document
 \begin{document}
@@ -22,6 +24,33 @@
 	\pagenumbering{arabic} % Re-Start the page numbering
 
 	%% Introduction section
+	\section{Introduction}
+		The problem under consideration in this document is a problem consisting of disks, an algorithm and a series of steps.  
+		The problem is described as follows:\
+		\begin{align}
+			1) &\text{ A stack of seven disks sits on a surface.}\\
+			2) &\text{ One disk is added to the top of the existing stack(s),} \\
+		    	    &\text{ and a set of disks is added to form a square perimeter around the existing stack(s).}\\
+			3) &\text{ Step 2 is repeated ad Infinium.}
+		\end{align}	
+		It is often easier to understand a problem if there are visual references available to the reader.  The author has provided these below:\
+		\begin{figure}[h]
+			\includegraphics{step1.png}
+			\caption{Step 1}
+			\label{Step1_ortho}
+			\includegraphics{step2.png}
+			\caption{Step 2}
+			\label{Step2_ortho}
+		\end{figure}
+	\newpage
+	\section{Recursive and closed form expressions}
+		The ultimate goal is to use the principle of mathematical induction to prove the validity of a closed form expression 
+		for describing the number of disks needed for any particular step of the problem statement.  This will involve four 
+		steps; generating data, developing a recursive formula, developing a closed form expression, and finally using induction 
+ 		prove the close form to be correct.
+	
+	\subsection{Data}
+		
 
 	\begin{align}
 		D(n)&= D(k-1)+(2k-3)^3+2(2k-1)+2(2k-3)\\

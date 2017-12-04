@@ -1,0 +1,49 @@
+%% Preamble for this document
+% Declare the document class with 12pt font
+\documentclass[12pt]{article}
+% Include the math package
+\usepackage{amsmath}
+% Use the geometry package to change the margins to 1"
+\usepackage[margin=1in]{geometry}
+
+% Here's the document
+\begin{document}
+
+	% Create the title page
+	\thispagestyle{empty}
+	\pagenumbering{gobble}
+	\title{MATH 189: Induction Proof}
+	\author{Rob Peterson}
+	\date{Fall 2017}
+	\maketitle
+
+	\newpage % Force a page break for the title page
+
+	\pagenumbering{arabic} % Re-Start the page numbering
+
+	%% Introduction section
+
+	\begin{align}
+		D(n)&= D(k-1)+(2k-3)^3+2(2k-1)+2(2k-3)\\
+		D(k+1)&=D(k)+(2(k+1)-3)^2+2(2(k+1)-1)+2(2(k+1)-3)\\
+		&=D(k)+(2k+2-3)^2+2(2k+2-1)+2(2k+2-3)\\
+		&=D(k)+(2k-1)^2+2(2k+1)+2(2k-1)\\
+		&=D(k)+(2k-1)^2+4k+2+4k-2\\
+		&=D(k)+4k^2-4k+1+4k+2+4k-2\\
+		&=D(k)+4k^2+4k+1		
+	\end{align}
+	\text{We've assumed that the closed form formula is valid for D(k)}
+	\begin{align}
+		D(k+1)&=[\frac{4}{3}k^3-\frac{1}{3}k+6]+4k^2+4k+1\\	
+		&=\frac{4k^3-k+18}{3}+4k^2+4k+1\\
+		&=\frac{4k^3-k+18+12k^2+12k+3}{3}\\
+		&=\frac{4k^3+12k^2+11k+21}{3}\\
+		&=\frac{4k^3+12k^2+(12k-1k)+(-1+18+4)}{3}\\
+		&=\frac{[4k^3+12k^2+12k+4]+[-1k-1]+18)}{3}\\
+		&=\frac{4[k^3+3k^2+3k+1]-[k+1]+18)}{3}\\
+		&=\frac{4(k+1)^3-(k+1)+18)}{3}\\
+		&=\frac{4(k+1)^3}{3}-\frac{(k+1)}{3}+6
+	\end{align}
+	By mathematial induction, the preceding has proven that the closed form formula expressed in equation 12 accurately describes how many 
+	disks would be needed to complete any particular step in the problem statement.
+\end{document}
